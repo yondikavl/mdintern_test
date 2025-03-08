@@ -22,6 +22,16 @@ class SecondScreenPage extends StatelessWidget {
         ),
         centerTitle: true,
         backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.keyboard_arrow_left,
+            color: Color(0xff2B637B),
+            size: 36,
+          ),
+          onPressed: () {
+            Get.back();
+          },
+        ),
       ),
       body: Container(
         decoration: BoxDecoration(
