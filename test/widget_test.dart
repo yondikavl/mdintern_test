@@ -7,24 +7,32 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:mdintern_test_suitmedia/app/modules/first_screen/pages/first_screen_page.dart';
 
-import 'package:mdintern_test_suitmedia/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Test FirstScreen UI', (WidgetTester tester) async {
+    // Inisialisasi GetX
+    Get.testMode = true;
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Build FirstScreen dan trigger a frame.
+    await tester.pumpWidget(
+      GetMaterialApp(
+        home: FirstScreenPage(), // Gunakan FirstScreenPage sebagai widget utama
+      ),
+    );
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    // Verifikasi bahwa teks "First Screen" muncul.
+    expect(find.text('First Screen'), findsOneWidget);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verifikasi bahwa ada dua TextField.
+    expect(find.byType(TextField), findsNWidgets(2));
+
+    // Verifikasi bahwa ada tombol "Check" dan "Next".
+    expect(find.text('Check'), findsOneWidget);
+    expect(find.text('Next'), findsOneWidget);
   });
 }
