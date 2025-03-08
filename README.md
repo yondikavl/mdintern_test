@@ -152,8 +152,8 @@ Berikut adalah beberapa screenshot dari aplikasi:
 
 Jika Anda memiliki pertanyaan atau masukan, silakan hubungi:
 
-- **Nama**: [Yondika Vio Landa]
-- **Email**: [yondikaviolanda@gmail.com]
+- **Nama**: Yondika Vio Landa
+- **Email**: yondikaviolanda@gmail.com
 - **GitHub**: [yondikavl](https://github.com/yondikavl)
 
 ---
