@@ -10,7 +10,7 @@ void main() {
   runApp(
     GetMaterialApp(
       title: 'Suitmedia Test App',
-      initialRoute: AppRoutes.FIRST_SCREEN,
+      initialRoute: AppRoutes.firstScreen,
       getPages: AppPages.pages,
       theme: ThemeData(
         textTheme: GoogleFonts.poppinsTextTheme(),

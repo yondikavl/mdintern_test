@@ -1,3 +1,4 @@
 abstract class AppRoutes {
-  static const FIRST_SCREEN = '/first-screen';
+  static const firstScreen = '/first-screen';
+  static const secondScreen = '/second-screen';
 }

@@ -1,14 +1,21 @@
 import 'package:get/get.dart';
 import 'package:mdintern_test_suitmedia/app/modules/first_screen/bindings/first_screen_binding.dart';
 import 'package:mdintern_test_suitmedia/app/modules/first_screen/pages/first_screen_page.dart';
+import 'package:mdintern_test_suitmedia/app/modules/second_screen/bindings/second_screen_binding.dart';
+import 'package:mdintern_test_suitmedia/app/modules/second_screen/pages/second_screen_page.dart';
 import 'package:mdintern_test_suitmedia/app/routes/app_routes.dart';
 
 class AppPages {
   static final pages = [
     GetPage(
-      name: AppRoutes.FIRST_SCREEN,
+      name: AppRoutes.firstScreen,
       page: () => FirstScreenPage(),
       binding: FirstScreenBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.secondScreen,
+      page: () => SecondScreenPage(),
+      binding: SecondScreenBinding(),
     ),
   ];
 }

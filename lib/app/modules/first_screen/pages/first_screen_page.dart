@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mdintern_test_suitmedia/app/modules/first_screen/controllers/first_screen_controller.dart';
+import 'package:mdintern_test_suitmedia/app/routes/app_routes.dart';
 
 class FirstScreenPage extends StatelessWidget {
   final FirstScreenController _controller = Get.find();
@@ -10,7 +12,6 @@ class FirstScreenPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/background 1.png'),
@@ -63,7 +64,7 @@ class FirstScreenPage extends StatelessWidget {
                   onPressed: () => _controller.checkPalindrome(),
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 15),
-                    textStyle: const TextStyle(fontSize: 16),
+                    textStyle: GoogleFonts.poppins(fontSize: 14),
                     backgroundColor: const Color(0xff2B637B),
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -78,11 +79,18 @@ class FirstScreenPage extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    //
+                    if (_controller.name.value.isNotEmpty) {
+                      Get.toNamed(
+                        AppRoutes.secondScreen,
+                        arguments: _controller.name.value,
+                      );
+                    } else {
+                      Get.snackbar('Error', 'Please enter your name');
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 15),
-                    textStyle: const TextStyle(fontSize: 16),
+                    textStyle: GoogleFonts.poppins(fontSize: 14),
                     backgroundColor: const Color(0xff2B637B),
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
