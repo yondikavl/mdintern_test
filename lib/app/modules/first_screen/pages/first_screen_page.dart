@@ -30,32 +30,36 @@ class FirstScreenPage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               const SizedBox(height: 50),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Name',
-                  labelStyle: TextStyle(color: Color(0xffB9B8CA)),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: const BorderSide(color: Color(0xffE2E3E4)),
-                  ),
-                  filled: true,
-                  fillColor: Colors.white,
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                onChanged: (value) => _controller.name.value = value,
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Name',
+                    labelStyle: TextStyle(color: Color(0xffB9B8CA)),
+                    border: InputBorder.none,
+                  ),
+                  onChanged: (value) => _controller.name.value = value,
+                ),
               ),
               const SizedBox(height: 16),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Palindrome',
-                  labelStyle: TextStyle(color: Color(0xffB9B8CA)),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: const BorderSide(color: Color(0xffE2E3E4)),
-                  ),
-                  filled: true,
-                  fillColor: Colors.white,
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                onChanged: (value) => _controller.sentence.value = value,
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Palindrome',
+                    labelStyle: TextStyle(color: Color(0xffB9B8CA)),
+                    border: InputBorder.none,
+                  ),
+                  onChanged: (value) => _controller.sentence.value = value,
+                ),
               ),
               const SizedBox(height: 50),
               SizedBox(
